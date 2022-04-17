@@ -1,37 +1,77 @@
+body {
+	background-color: #413831;
+	margin: 0;
+	font-family: "Verdana", sans-serif;
+	background-color: #413831;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+	color: white;
+	font-size: 16px;
+}
+
 .App {
 	text-align: center;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+	background-color: #413831;
 }
 
-input,
+input {
+	height: 30px;
+	font-size: 20px;
+	margin: 5px;
+	text-align: center;
+}
+
 button {
 	width: 200px;
-	height: 30;
+	height: 30px;
 	font-size: 20px;
 	margin: 5px;
 }
 
 .databaseEntry {
-	background-color: grey;
+	margin: auto;
+	width: 95%;
+	height: 30%;
 	display: flex;
-	flex-direction: row;
-	justify-content: center;
+	justify-content: space-between;
 	align-items: center;
+	background-color: #DCC287;
 	flex-wrap: wrap;
 	margin-bottom: 3rem;
+	padding: 2px;
+} 
+
+.imageBox {
+	width: 25%;
+	margin: 7px;
+}
+
+.entryImage {
+	width: 100%;
+	padding: 1px;
 }
 
 .entryInfo {
-	max-width: 500px;
-	padding: 2rem;
+	width: 50%;
 	padding-bottom: 0;
+	text-align: left;
 }
 
-.entryBtn {
+.entryInputs {
+	width: 20%;
 	position: relative;
-	bottom: 0;
 	right: 0;
+}
+
+.entryHeader {
+	height: 20%;
+}
+
+.gameContent {
+	height: 80%;
 }
