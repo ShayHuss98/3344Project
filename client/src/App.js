@@ -46,15 +46,14 @@ function App() {
 
 	//Axios put request that takes the API route to update, passing through the ID from the database and the new input.
 	const updateGame = (id) => {
-		const updateReq = Axios.put("http://localhost:3001/update", {
-			id: id,
-			newGameName: newGameName,
+		Axios({
+			method: "PUT",
+			url: "http://localhost:3001/update",
+			params: {
+				id: id,
+				newGameName: newGameName,
+			},
 		});
-
-		const updateRes = await updateReq;
-		updateRes.then 
-
-
 	};
 
 	//This Axios request passes an ID to the parameter, which deletes index in the database with the same ID.

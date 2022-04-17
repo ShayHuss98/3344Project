@@ -2,6 +2,7 @@ const express = require("express"); //Calls the express server
 const mongoose = require("mongoose"); //Imports mongoose library
 const cors = require("cors"); //Imports the cors package.
 const app = express(); //Initializes the express server
+require("dotenv").config();
 
 const GameModel = require("./models/Games"); //Imports our schema model
 
@@ -10,7 +11,7 @@ app.use(cors()); //Implements cors into the project allowing our backend to comm
 
 mongoose.connect(
 	//Connects us to our mongoose database
-	"mongodb+srv://NewStudent:yTYkbkZLGn4ywjkZ@3344.d0869.mongodb.net/games?retryWrites=true&w=majority",
+	process.env.dbURL,
 	{
 		useNewUrlParser: true,
 	}
