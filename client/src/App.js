@@ -128,26 +128,34 @@ function App() {
 				return (
 					// THis will render HTML with dynamic elements with Javascript.
 					<div className="databaseEntry" key={key}>
-						<img className="entryImage" src={val.gameImage} />
-						<h1 className="entryHeader">{val.gameName}</h1>
-						<p className="entryInfo">
-							{val.gameDescription}
-							{val.gameRating} {val.gameDifficulty} {val.gamePublisher}{" "}
-							{val.gameESRB}
-						</p>
-						<input
-							type="text"
-							placeholder="Update Game Name..."
-							onChange={(event) => {
-								setNewGameName(event.target.value);
-							}}
-						/>
-						<button className="entryBtn" onClick={() => updateGame(val._id)}>
-							Update
-						</button>
-						<button className="entryBtn2" onClick={() => deleteGame(val._id)}>
-							Delete
-						</button>
+						<div className="imageBox"> <img className="entryImage" src={val.gameImage} /> </div>
+						<div className="entryInfo">
+							<div className="entryHeader"> <h1>{val.gameName}</h1> </div>
+							<div className="gameContent">
+								<p className="gameDesc">{val.gameDescription}</p>
+								<ul className="gameInfo">
+									<li>Publisher: {val.gamePublisher}</li>
+									<li>ESRB Rating: {val.gameESRB}</li>
+									<li>Rating: {val.gameRating} / 10</li>
+									<li>Difficulty: {val.gameDifficulty}</li>
+								</ul>
+							</div>
+						</div>
+						<div className="entryInputs">
+							<div className="nameUpdate"> <input
+								type="text"
+								placeholder="Update Game Name..."
+								onChange={(event) => {
+									setNewGameName(event.target.value);
+								}}
+								/> </div>
+							<button className="entryBtn" onClick={() => updateGame(val._id)}>
+								Update
+							</button>
+							<button className="deleteBtn" onClick={() => deleteGame(val._id)}>
+								Delete
+							</button>
+						</div>
 					</div>
 				);
 			})}
