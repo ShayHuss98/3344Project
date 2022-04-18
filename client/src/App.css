@@ -19,6 +19,12 @@ body {
 	background-color: #413831;
 }
 
+.input {
+	display: grid;
+	grid-template-columns: max-content max-content;
+	grid-gap: 5px;
+}
+
 input {
 	height: 30px;
 	font-size: 20px;
@@ -74,4 +80,17 @@ button {
 
 .gameContent {
 	height: 80%;
+}
+
+a {
+	text-decoration: none;
+	color: #ffbcbc;
+}
+
+a:hover {
+	color: white;
+}
+
+a:visited {
+	color: #ff4848;
 }
