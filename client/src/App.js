@@ -64,64 +64,71 @@ function App() {
 	return (
 		<div className="App">
 			<div className="sidebar">
-				<h1><a href="https://cis-iis2.temple.edu/Spring2022/CIS3344_tuk09459/tutorial.html" target="_blank">CIS3344 Term Project: ReactJS</a></h1>
+				<h1>
+					<a
+						href="https://cis-iis2.temple.edu/Spring2022/CIS3344_tuk09459/tutorial.html"
+						target="_blank"
+					>
+						CIS3344 Term Project: ReactJS
+					</a>
+				</h1>
 				<div className="input">
-				{/* These functions below grab the inputs from our textboxes and saves them to our States. */}
-				<label>Game Image</label>
-				<input
-					type="text"
-					onChange={(event) => {
-						setGameImage(event.target.value);
-					}}
-				/>
-				<label>Game Name</label>
-				<input
-					required
-					type="text"
-					onChange={(event) => {
-						setGameName(event.target.value);
-					}}
-				/>
-				<label>Game Rating</label>
-				<input
-					required
-					type="number"
-					onChange={(event) => {
-						setRating(event.target.value);
-					}}
-				/>
-				<label>Game's Difficulty</label>
-				<input
-					required
-					type="text"
-					onChange={(event) => {
-						setGameDifficulty(event.target.value);
-					}}
-				/>
-				<label>Game's Publisher</label>
-				<input
-					required
-					type="text"
-					onChange={(event) => {
-						setGamePublisher(event.target.value);
-					}}
-				/>
-				<label>Game's ESRB Rating</label>
-				<input
-					required
-					type="text"
-					onChange={(event) => {
-						setGameESRB(event.target.value);
-					}}
-				/>
-				<label>Game Description</label>
-				<input
-					required
-					type="text"
-					onChange={(event) => {
-						setGameDescription(event.target.value);
-					}}
-				/>
+					{/* These functions below grab the inputs from our textboxes and saves them to our States. */}
+					<label>Game Image</label>
+					<input
+						type="text"
+						onChange={(event) => {
+							setGameImage(event.target.value);
+						}}
+					/>
+					<label>Game Name</label>
+					<input
+						required
+						type="text"
+						onChange={(event) => {
+							setGameName(event.target.value);
+						}}
+					/>
+					<label>Game Rating</label>
+					<input
+						required
+						type="number"
+						onChange={(event) => {
+							setRating(event.target.value);
+						}}
+					/>
+					<label>Game's Difficulty</label>
+					<input
+						required
+						type="text"
+						onChange={(event) => {
+							setGameDifficulty(event.target.value);
+						}}
+					/>
+					<label>Game's Publisher</label>
+					<input
+						required
+						type="text"
+						onChange={(event) => {
+							setGamePublisher(event.target.value);
+						}}
+					/>
+					<label>Game's ESRB Rating</label>
+					<input
+						required
+						type="text"
+						onChange={(event) => {
+							setGameESRB(event.target.value);
+						}}
+					/>
+					<label>Game Description</label>
+					<input
+						required
+						type="text"
+						onChange={(event) => {
+							setGameDescription(event.target.value);
+						}}
+					/>
 				</div>
 				<button onClick={addToList}>Add To List</button>
 			</div>
@@ -134,9 +141,15 @@ function App() {
 					return (
 						// THis will render HTML with dynamic elements with Javascript.
 						<div className="databaseEntry" key={key}>
-							<div className="imageBox"> <img className="entryImage" src={val.gameImage} /> </div>
+							<div className="imageBox">
+								{" "}
+								<img className="entryImage" src={val.gameImage} />{" "}
+							</div>
 							<div className="entryInfo">
-								<div className="entryHeader"> <h1>{val.gameName}</h1> </div>
+								<div className="entryHeader">
+									{" "}
+									<h1>{val.gameName}</h1>{" "}
+								</div>
 								<div className="gameContent">
 									<p className="gameDesc">{val.gameDescription}</p>
 									<ul className="gameInfo">
@@ -146,21 +159,30 @@ function App() {
 										<li>Difficulty: {val.gameDifficulty}</li>
 									</ul>
 								</div>
-							</div>
-							<div className="entryInputs">
-								<div className="nameUpdate"> <input
-									type="text"
-									placeholder="Update Game Name..."
-									onChange={(event) => {
-										setNewGameName(event.target.value);
-									}}
-									/> </div>
-								<button className="entryBtn" onClick={() => updateGame(val._id)}>
-									Update
-								</button>
-								<button className="deleteBtn" onClick={() => deleteGame(val._id)}>
-									Delete
-								</button>
+								<div className="entryInputs">
+									<div className="nameUpdate">
+										{" "}
+										<input
+											type="text"
+											placeholder="Update Game Name..."
+											onChange={(event) => {
+												setNewGameName(event.target.value);
+											}}
+										/>{" "}
+									</div>
+									<button
+										className="entryBtn"
+										onClick={() => updateGame(val._id)}
+									>
+										Update
+									</button>
+									<button
+										className="deleteBtn"
+										onClick={() => deleteGame(val._id)}
+									>
+										Delete
+									</button>
+								</div>
 							</div>
 						</div>
 					);
