@@ -49,7 +49,7 @@ function App() {
 		Axios({
 			method: "PUT",
 			url: "http://localhost:3001/update",
-			params: {
+			data: {
 				id: id,
 				newGameName: newGameName,
 			},
