@@ -17,7 +17,7 @@ mongoose.connect(
 	}
 );
 
-//This creates a route between the back end and the front end so that wave save data into our database.
+//This creates a route between the back end and the front end so that we can save data into our database.
 //You will need to install a package called cors
 app.post("/insert", async (req, res) => {
 	const game = new GameModel({
@@ -32,7 +32,7 @@ app.post("/insert", async (req, res) => {
 
 	try {
 		await game.save();
-		res.send("inserted data");
+		res.send("Inserted data");
 	} catch (err) {
 		console.log(err);
 	}
@@ -51,9 +51,8 @@ app.get("/read", async (req, res) => {
 });
 
 app.put("/update", async (req, res) => {
-	const newGameName = req.body.newGameName; //Grab the new game name
-	const id = req.body.id; //Grabs the id of the database entry
-
+	const newGameName = req.body.newGameName; //The new game name
+	const id = req.body.id; //The id of the database entry
 	try {
 		await GameModel.findById(id, (err, updatedGame) => {
 			//Finds the id and grabs the update game name
@@ -66,7 +65,7 @@ app.put("/update", async (req, res) => {
 	}
 });
 
-// This whole function Deletes the element in the database that has the same ID
+// This function Deletes the element in the database that has the same ID
 app.delete("/delete/:id", async (req, res) => {
 	const id = req.params.id;
 
